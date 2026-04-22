@@ -6,8 +6,11 @@ class Produto:
         self.nome = nome
         self.preço = preço
     def etiqueta(self):
-        tam = len(self.nome)
-        etiquetaa = Panel(renderable=f"{self.nome}" + "\n" + "-"*tam + "\n" + "."*tam + f"R${self.preço:.2f}" + "."*tam, title="Produto", width=37)
+        conteudo = f"{self.nome.center(30,' ')}"
+        conteudo += f"{'-'*30}"
+        preçof = f"R${self.preço:,.2f}"
+        conteudo += f"{preçof.center(30, '.')}"
+        etiquetaa = Panel(conteudo,title="Produto", width=34)
         print(etiquetaa)
 p1 = Produto("Iphone 17 Pro Max",25_000.85)
 p2 = Produto("Notebook Gamer ",8_000)

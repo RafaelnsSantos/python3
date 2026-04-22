@@ -1,7 +1,7 @@
 #Crie a classe Caneta, que simule o funcionamento de uma caneta colorida,podendo escrever frases na cor relativa. AZUL,VERMELHO E VERDE 
 from rich import print
 class Caneta:
-    def __init__(self,cor):
+    def __init__(self,cor = "azul"):
         self.cor = cor 
         self.destamparr = False
     def destampar(self):
@@ -34,6 +34,6 @@ c3.destampar()
 c4.destampar()
 c1.escrever("ola,tudo bem?")
 c1.quebra_linha(0)
-c2.escrever("ola,gafanhoto! ")
+c2.escrever("ola, gafanhoto! ")
 c3.escrever("Vamos exercitar! ")
 c4.escrever("alooo")
