@@ -1,6 +1,6 @@
 #Estrutura para calcular salarios de funcionarios
 from rich.panel import Panel
-from rich import print as rich_print
+from rich import print
 from abc import ABC,abstractmethod
 class Funcionario(ABC):
     def __init__(self,nome,sal_bruto,salario,sal_min =1612,inss=7.5) -> None:
@@ -30,7 +30,7 @@ class Horista(Funcionario):
 
     def analisar_sal(self):
         painel_analise = Panel(f"O salario de {self.nome} (Funcionario Horista) e de {self.salario:.2f} e corresponde a {self.salario/self.sal_min:.1f} salarios mininos", title="Analise de salario", width=50)
-        rich_print(painel_analise)
+        print(painel_analise)
 
 class Mensalista(Funcionario):
     def __init__(self, nome, sal_bruto, salario=0, sal_min=1612, inss=7.5) -> None:
@@ -42,5 +42,5 @@ class Mensalista(Funcionario):
 
     def analisar_sal(self):
         painel_analise = Panel(f"O salario de {self.nome} (Funcionario Horista) e de {self.salario:.2f} e corresponde a {self.salario/self.sal_min:.1f} salarios mininos", title="Analise de salario", width=50)
-        rich_print(painel_analise)
+        print(painel_analise)
 
