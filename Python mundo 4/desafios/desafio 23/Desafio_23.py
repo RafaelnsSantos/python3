@@ -12,7 +12,7 @@ class poligono(ABC):
 
 class Quadrado(poligono):
     def __init__(self, qtd_lados) -> None:
-        super().__init__(qtd_lados)
+        super().__init__(4)
         self.lado = qtd_lados
     
     def Perimetro(self) -> float:

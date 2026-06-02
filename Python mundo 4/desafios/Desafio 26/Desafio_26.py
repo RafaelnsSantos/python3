@@ -15,7 +15,8 @@ class Funcionario(ABC):
         pass
     
     def analisar_sal(self):
-        pass
+        painel_analise = Panel(f"O salario de {self.nome} (Funcionario {self.__class__.__name__}) e de {self.salario:.2f} e corresponde a {self.salario/self.sal_min:.1f} salarios mininos", title="Analise de salario", width=50)
+        print(painel_analise)
 
 class Horista(Funcionario):
     def __init__(self, nome, valor_hora,horas_trab,sal_bruto=0, salario=0, sal_min=1612, inss=7.5) -> None:
@@ -28,9 +29,7 @@ class Horista(Funcionario):
         desconto_inss = (self.sal_bruto/100) * self.inss
         self.salario = self.sal_bruto - desconto_inss
 
-    def analisar_sal(self):
-        painel_analise = Panel(f"O salario de {self.nome} (Funcionario Horista) e de {self.salario:.2f} e corresponde a {self.salario/self.sal_min:.1f} salarios mininos", title="Analise de salario", width=50)
-        print(painel_analise)
+
 
 class Mensalista(Funcionario):
     def __init__(self, nome, sal_bruto, salario=0, sal_min=1612, inss=7.5) -> None:
@@ -40,7 +39,5 @@ class Mensalista(Funcionario):
         desconto_inss = (self.sal_bruto/100)*self.inss
         self.salario = self.sal_bruto - desconto_inss
 
-    def analisar_sal(self):
-        painel_analise = Panel(f"O salario de {self.nome} (Funcionario Horista) e de {self.salario:.2f} e corresponde a {self.salario/self.sal_min:.1f} salarios mininos", title="Analise de salario", width=50)
-        print(painel_analise)
+
 
