@@ -1,0 +1,20 @@
+class Availacao():
+    def __init__(self,nome,disciplina,nota = 0):
+        self.nome = nome
+        self.disciplina = disciplina
+        self._nota = nota
+    #Criaçao de atributo validavel
+    @property
+    def nota(self):#getter e um caminho validavel para mecher na nota
+        return self._nota 
+
+    @nota.setter
+    def nota(self,valor): #setter
+        if 0 <= valor <= 10:
+            self._nota = valor
+        else:
+            print("nota invalida") 
+
+    @nota.deleter
+    def nota(self):
+        pass
